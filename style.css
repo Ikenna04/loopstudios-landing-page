@@ -1,0 +1,878 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Alata:wght@400&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+/* | UTILITY CLASSES */
+img {
+	display: block;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+li {
+	list-style-type: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.mobile {
+	display: none;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--white: hsl(0, 0%, 100%);
+	--black: hsl(0, 0%, 0%);
+	--dark-gray: hsl(0, 0%, 55%);
+	--very-dark-gray: hsl(0, 0%, 41%);
+
+	/* | FONTS  */
+	--h1-font: 400 80px 'Alata';
+	--h2-font: 400 50px 'Alata';
+	--h3-font: 400 200% 'Alata';
+	--p-font: 300 18px 'Josefin Sans';
+	--vr-p-font: 300 16px 'Josefin Sans';
+}
+
+/* | GENERAL STYLES */
+html {
+	width: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font: var(--p-font);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+body > * {
+	width: 100%;
+	padding-inline: 165px;
+}
+
+header {
+	aspect-ratio: 144/65;
+	width: 100%;
+	background: url(img/desktop/image-hero.jpg) no-repeat center;
+	background-size: cover;
+	color: var(--white);
+	display: flex;
+	flex-flow: column;
+	gap: 65px;
+}
+
+nav {
+	padding-block: 64px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 100px;
+}
+
+nav img[alt='Loop Studio Logo'] {
+	width: 192px;
+	height: auto;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+}
+
+.nav-links li {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.nav-links li.mobile {
+	display: none;
+}
+
+.border-bottom {
+	width: calc(100% - 28px);
+}
+
+li:hover .border-bottom {
+	animation: border 0.5s forwards 0s ease-in-out;
+}
+
+@keyframes border {
+	0% {
+		border: 1px solid;
+		transform: rotateY(90deg);
+	}
+
+	25% {
+		border: 1px solid;
+		transform: rotateY(67deg);
+	}
+
+	50% {
+		border: 1px solid;
+		transform: rotateY(45deg);
+	}
+
+	75% {
+		border: 1px solid;
+		transform: rotateY(23deg);
+	}
+
+	100% {
+		border: 1px solid;
+		transform: rotateY(0deg);
+	}
+}
+
+.header-article {
+	width: 650px;
+	padding: 40px 48px;
+	border: 2px solid;
+}
+
+h1 {
+	font: var(--h1-font);
+	text-transform: uppercase;
+}
+
+.main {
+	padding-block: 160px 183px;
+	color: var(--black);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 185px;
+}
+
+.main > * {
+	width: 100%;
+}
+
+.vr-section {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	position: relative;
+}
+
+.vr-img {
+	width: 65.8%;
+	height: auto;
+}
+
+.vr-img img {
+	width: 100%;
+	height: auto;
+}
+
+.vr-text {
+	padding: 98px 0 0 98px;
+	background-color: var(--white);
+	font: var(--vr-p-font);
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 42px;
+	position: absolute;
+	/* top: 180px; */
+	bottom: 0;
+	left: 51.4%;
+}
+
+h2 {
+	font: var(--h2-font);
+	text-transform: uppercase;
+}
+
+.grid-section {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 90px;
+}
+
+.grid-head {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn {
+	width: 160px;
+	height: 42px;
+	border: 1px solid var(--very-dark-gray);
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn:hover {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.grid-main {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+}
+
+.grid-main li {
+	position: relative;
+	overflow: hidden;
+}
+
+.grid-main li img {
+	width: 100%;
+}
+
+.grid-main li:hover img {
+	width: 100%;
+	animation: img-scale 1s forwards 0s ease-in-out;
+}
+
+@keyframes img-scale {
+	33% {
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0.5;
+		transform: scale(1.1);
+	}
+}
+
+h3 {
+	font: var(--h3-font);
+	text-transform: uppercase;
+	color: var(--white);
+	position: absolute;
+	bottom: 40px;
+	left: 42px;
+}
+
+img[alt='Grid Image'] ~ h3 {
+	width: 150px;
+}
+
+footer {
+	padding-block: 44px 32px;
+	background-color: var(--black);
+	color: var(--white);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 50px;
+}
+
+footer div {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 30px;
+}
+
+footer .left > img {
+	height: 24px;
+	width: auto;
+}
+
+.right {
+	color: var(--dark-gray);
+	align-items: flex-end;
+	text-align: right;
+}
+
+footer ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+}
+
+footer ul li {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+footer ul li img {
+	padding-bottom: 8px;
+}
+
+.socials {
+	gap: 16px;
+}
+
+.socials img {
+	width: 24px;
+	height: auto;
+}
+
+.socials .border-bottom {
+	width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-font: 400 50px 'Alata';
+		--h2-font: 400 40px 'Alata';
+		--h3-font: 400 24px 'Alata';
+		--p-font: 300 16px 'Josefin Sans';
+	}
+
+	/* | GENERAL STYLES */
+
+	body > * {
+		padding-inline: 60px;
+	}
+
+	header {
+		/* background-size: cover;  */
+		gap: 60px;
+	}
+
+	nav {
+		padding-block: 32px;
+		gap: 50px;
+	}
+
+	nav img[alt='Loop Studio Logo'] {
+		width: 160px;
+	}
+
+	.header-article {
+		width: 450px;
+		padding: 32px;
+	}
+
+	.main {
+		padding-block: 120px;
+		gap: 100px;
+	}
+
+	.vr-text {
+		padding: 50px 0 0 50px;
+		gap: 30px;
+	}
+
+	.grid-section {
+		gap: 32px;
+	}
+
+	.btn {
+		width: 120px;
+		height: 40px;
+	}
+
+	footer {
+		padding-block: 40px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h3-font: 400 300% 'Alata';
+	}
+
+	/* | GENERAL STYLES */
+
+	.grid-main {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 50px;
+	}
+
+	img[alt='Deep Earth Image'] ~ h3 {
+		width: 150px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* | UTILITY CLASSES */
+	.mobile {
+		display: block;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-font: 400 300% 'Alata';
+		--h2-font: 400 240% 'Alata';
+		--h3-font: 400 180% 'Alata';
+		--h4-font: 400 160% 'Alata';
+		--p-font: 300 30px 'Josefin Sans';
+		--vr-p-font: 300 30px 'Josefin Sans';
+	}
+
+	/* | GENERAL STYLES */
+
+	body > * {
+		padding-inline: 48px;
+	}
+
+	header {
+		aspect-ratio: 15/26;
+		background: url(img/mobile/image-hero.jpg) no-repeat center;
+		background-size: cover;
+		gap: 240px;
+	}
+
+	nav {
+		padding-block: 80px;
+		gap: 100px;
+	}
+
+	:is(nav, .nav-links) img[alt='Loop Studio Logo'] {
+		width: 290px;
+	}
+
+	.nav-links {
+		width: 100%;
+		height: 100%;
+		padding: 80px 48px;
+		background-color: var(--black);
+		font: var(--h4-font);
+		text-transform: uppercase;
+		/* display: flex;/ */
+		display: none;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 30px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+
+	.nav-links li.mobile {
+		display: block;
+	}
+
+	.nav-links li:first-child {
+		width: 100%;
+		padding-bottom: 256px;
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+	}
+
+	img[alt='Close Icon'] {
+		width: 40px;
+		height: auto;
+	}
+
+	img[alt='Menu Icon'] {
+		width: 50px;
+		height: auto;
+	}
+
+	.header-article {
+		width: 100%;
+		padding: 50px 55px;
+		border-width: 4px;
+	}
+
+	h1 {
+		font: var(--h1-font);
+		text-transform: uppercase;
+	}
+
+	.main {
+		padding-block: 190px;
+		text-align: center;
+		gap: 200px;
+	}
+
+	.vr-section {
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		gap: 98px;
+	}
+
+	.vr-img {
+		width: 100%;
+	}
+
+	.vr-text {
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		gap: 42px;
+		position: static;
+	}
+
+	.grid-section {
+		gap: 110px;
+	}
+
+	.grid-head {
+		justify-content: center;
+	}
+
+	.mobile.btn {
+		width: 316px;
+		height: 82px;
+		margin-top: -45px;
+		border-width: 2px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.grid-main {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 48px;
+	}
+
+	h3 {
+		width: 250px;
+		text-align: left;
+		position: absolute;
+		bottom: 50px;
+		left: 42px;
+	}
+
+	img[alt='Grid Image'] ~ h3 {
+		width: 250px;
+	}
+
+	img[alt='Deep Earth Image'] ~ h3 {
+		width: 250px;
+	}
+
+	footer {
+		padding-block: 110px;
+		flex-flow: column;
+		justify-content: center;
+		gap: 100px;
+	}
+
+	footer div {
+		justify-content: center;
+		align-items: center;
+		gap: 80px;
+	}
+
+	footer .left > img {
+		height: 48px;
+	}
+
+	.right {
+		align-items: center;
+		text-align: center;
+		gap: 48px;
+	}
+
+	footer ul {
+		flex-flow: column;
+		gap: 42px;
+	}
+
+	.socials {
+		flex-flow: row;
+		gap: 32px;
+	}
+
+	.socials img {
+		width: 48px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-font: 300 24px 'Josefin Sans';
+		--vr-p-font: 300 24px 'Josefin Sans';
+	}
+}
+
+@media screen and (max-width: 550px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-font: 300 20px 'Josefin Sans';
+		--vr-p-font: 300 20px 'Josefin Sans';
+	}
+
+	/* | GENERAL STYLES */
+
+	body > * {
+		padding-inline: 32px;
+	}
+
+	header {
+		gap: 160px;
+	}
+
+	nav {
+		padding-block: 53px;
+		gap: 67px;
+	}
+
+	nav img[alt='Loop Studio Logo'] {
+		width: 193px;
+	}
+
+	.nav-links {
+		padding: 53px 32px;
+		gap: 40px;
+	}
+
+	.nav-links li:first-child {
+		padding-bottom: 183px;
+	}
+
+	img[alt='Close Icon'] {
+		width: 27px;
+	}
+
+	img[alt='Menu Icon'] {
+		width: 33px;
+	}
+
+	.header-article {
+		padding: 33px 37px;
+	}
+
+	.main {
+		padding-block: 127px;
+		gap: 133px;
+	}
+
+	.vr-section {
+		gap: 65px;
+	}
+
+	.vr-text {
+		gap: 28px;
+	}
+
+	.grid-section {
+		gap: 73px;
+	}
+
+	.mobile.btn {
+		width: 211px;
+		height: 55px;
+		margin-top: -30px;
+	}
+
+	.grid-main {
+		gap: 32px;
+	}
+
+	h3 {
+		width: 167px;
+		bottom: 33px;
+		left: 28px;
+	}
+
+	img[alt='Grid Image'] ~ h3 {
+		width: 167px;
+	}
+
+	img[alt='Deep Earth Image'] ~ h3 {
+		width: 167px;
+	}
+
+	footer {
+		padding-block: 73px;
+		gap: 67px;
+	}
+
+	footer div {
+		gap: 53px;
+	}
+
+	footer .left > img {
+		height: 32px;
+	}
+
+	.right {
+		gap: 32px;
+	}
+
+	footer ul {
+		gap: 28px;
+	}
+
+	.socials {
+		gap: 21px;
+	}
+
+	.socials img {
+		width: 32px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-font: 300 16px 'Josefin Sans';
+		--vr-p-font: 300 16px 'Josefin Sans';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--p-font: 300 15px 'Josefin Sans';
+		--vr-p-font: 300 15px 'Josefin Sans';
+	}
+
+	/* | GENERAL STYLES */
+
+	body > * {
+		padding-inline: 24px;
+	}
+
+	header {
+		gap: 120px;
+	}
+
+	nav {
+		padding-block: 40px;
+		gap: 50px;
+	}
+
+	nav img[alt='Loop Studio Logo'] {
+		width: 145px;
+	}
+
+	.nav-links {
+		padding: 40px 24px;
+		gap: 30px;
+	}
+
+	.nav-links li:first-child {
+		padding-bottom: 138px;
+	}
+
+	img[alt='Close Icon'] {
+		width: 20px;
+	}
+
+	img[alt='Menu Icon'] {
+		width: 25px;
+	}
+
+	.header-article {
+		padding: 25px;
+		border-width: 2px;
+	}
+
+	.main {
+		padding-block: 95px;
+		gap: 100px;
+	}
+
+	.vr-section {
+		gap: 48px;
+	}
+
+	.vr-text {
+		gap: 20px;
+	}
+
+	.grid-section {
+		gap: 55px;
+	}
+
+	.mobile.btn {
+		width: 168px;
+		height: 40px;
+		margin-top: -24px;
+		border-width: 1px;
+	}
+
+	.grid-main {
+		gap: 24px;
+	}
+
+	h3 {
+		width: 125px;
+		bottom: 25px;
+		left: 20px;
+	}
+
+	img[alt='Grid Image'] ~ h3 {
+		width: 125px;
+	}
+
+	img[alt='Deep Earth Image'] ~ h3 {
+		width: 125px;
+	}
+
+	footer {
+		padding-block: 55px;
+		gap: 50px;
+	}
+
+	footer div {
+		gap: 40px;
+	}
+
+	footer .left > img {
+		height: 24px;
+	}
+
+	.right {
+		gap: 24px;
+	}
+
+	footer ul {
+		gap: 20px;
+	}
+
+	.socials {
+		gap: 16px;
+	}
+
+	.socials img {
+		width: 24px;
+	}
+}
+
+.show {
+	display: flex;
+}
